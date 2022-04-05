@@ -1,0 +1,223 @@
+:root {
+  --vs_font: "Permanent Marker", cursive, "Poppins", sans-serif,
+    "Source Serif 4", serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--vs_font);
+}
+
+.game {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: rgb(136, 136, 240);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(136, 136, 240),
+    rgb(16, 129, 163)
+  );
+}
+.players_div {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  font-family: var(--vs_font);
+  font-size: 2rem;
+}
+.stage {
+  max-width: 800px;
+  min-width: 600px;
+  height: 400px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: rgb(10, 10, 10) 2px solid;
+  border-radius: 4px;
+  background-image: url("./img/stage_back.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.selectCont {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  gap: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.choice_img {
+  height: 60px;
+}
+.choice_img:hover {
+  cursor: pointer;
+}
+
+.vs {
+  font-size: 6rem;
+  font-family: var(--vs_font);
+}
+.fight_btns {
+  width: 150px;
+  margin-top: 40px;
+  background-color: inherit;
+  border: 1px solid black;
+  padding: 0 15%;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #0d6efd;
+  background-image: linear-gradient(
+    to bottom right,
+    #0d6efd,
+    rgb(82, 195, 230)
+  );
+}
+.computer {
+  height: 60px;
+  width: 60px;
+}
+.interrogante {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  transition: ease-out 0.5s;
+}
+.resultado {
+  margin: auto;
+  position: absolute;
+  font-family: var(--vs_font);
+  text-transform: uppercase;
+  transition: 1s ease-out;
+  transition-delay: 1s;
+  transform: translateY(-50px) scale(3);
+  animation: aparecer 100s ease-out;
+  animation-delay: 1s;
+  opacity: 0;
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.img_choice_ia {
+  height: 56px;
+  animation: ia_img 1.1s ease-out;
+}
+@keyframes ia_img {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.reglas_img {
+  margin-top: 40px;
+  height: 100px;
+  transition: all ease-out 0.2s;
+}
+.reglas_img:hover {
+  transform: scale(4) translate(0px, -50px);
+  cursor: pointer;
+  background-color: goldenrod;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+/* POSICOPN DE LA MANO SELECCIONADA **************************/
+.cero {
+  transition: all ease-out 0.1s;
+  transform: translate(130px, 150px) scale(1.4);
+}
+.uno {
+  transition: all ease-out 0.1s;
+  transform: translate(130px, 80px) scale(1.4);
+}
+.dos {
+  transition: all ease-out 0.1s;
+  transform: translate(130px, 0px) scale(1.4);
+}
+.tres {
+  transition: all ease-out 0.1s;
+  transform: translate(130px, -65px) scale(1.4);
+}
+.cuatro {
+  transition: all ease-out 0.1s;
+  transform: translate(130px, -140px) scale(1.4);
+}
+/* MOVIMIENTO IA  *****************/
+
+.ia_move {
+  transition: 1s ease-out;
+  transform: rotate(3240deg);
+}
+.ia_move_dos {
+  transition: 1s ease-out;
+  transform: translate(-100px, 0) scale(1.4);
+}
+
+.ia_no_display {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .text {
+    font-size: 1.5rem;
+  }
+  .vs {
+    font-size: 4rem;
+  }
+  .choice_img {
+    height: 50px;
+  }
+  .ia_move_dos {
+    transform: translate(-45px, 0) scale(1.3);
+  }
+  .cero {
+    transition: all ease-out 0.1s;
+    transform: translate(75px, 130px) scale(1.3);
+  }
+  .uno {
+    transition: all ease-out 0.1s;
+    transform: translate(75px, 65px) scale(1.3);
+  }
+  .dos {
+    transition: all ease-out 0.1s;
+    transform: translate(75px, 0px) scale(1.3);
+  }
+  .tres {
+    transition: all ease-out 0.1s;
+    transform: translate(75px, -65px) scale(1.3);
+  }
+  .cuatro {
+    transition: all ease-out 0.1s;
+    transform: translate(75px, -130px) scale(1.3);
+  }
+  .stage {
+    max-width: 800px;
+    min-width: 400px;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+  }
+}
